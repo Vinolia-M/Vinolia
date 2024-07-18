@@ -1,38 +1,215 @@
+body {
+  background-color: #d3d3d3 !important;
+}
+
 .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  .App-header {
+    color: #000;
+    margin: 0 130px;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+      a.logo {
+        font-family: 'Panchang Medium';
+        text-decoration: none;
+        color: #000;
+      }
+
+      a.logo:hover {
+        font-family: 'Panchang Bold';
+        transition: all 2s ease-in-out;
+      }
+
+      .app-navigation {
+        a {
+          font-size: 14px;
+          font-family: 'Panchang Medium';
+          text-decoration: none;
+          color: #000;
+        }
+
+        .nav-contents {
+          padding-right: 50px;
+        }
+      }
+
+      .line {
+        height: 1px;
+        min-width: 839px;
+        background: #000;
+    }
   }
+
+  .body-contents {
+    margin: 0 130px;
+    margin-top: 60px;
+    padding: 0 10px;
+
+    .name-intro {
+      text-align: center;
+
+      .name {
+        font-family: 'Panchang Medium';
+        font-size: 18px;
+    }
+      
+      .intro {
+        font-family: 'Poppins Semibold';
+        font-size: 80px;
+        line-height: 1.1;
+    }
+    }
+
+    .button {
+      position: relative;
+      min-height: 100px;
+      max-width: 80px;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+  }
+
+  .button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 4px #fff;
+    animation: glowAnimation 1s infinite alternate;
+  }
+
+  .cover {
+    overflow: hidden;
+    transform: rotate(-6deg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  .background {
+    font-family: 'Panchang Bold';
+    font-size: 200px;
+    width: max-content;
+}
+
+.socials-dot-border {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 80px;
+
+  .socials {
+    display: grid;
+
+  img.twitter {
+    padding: 20px 0;
+  }
+
+  img.tiktock {
+    padding-top: 20px;
+  }
+  }
+
+  .dot {
+    background-color: #000;
+    aspect-ratio: 1/1;
+    width: 10px;
+    border-radius: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+  .right-border {
+    width: 2px;
+    background-color: #000;
+    height: 147px;
+    display: flex;
+    margin: auto;
+}
+}
+  }
+
+  .cursor {pointer-events: none;}
+  .cursor__ball {position: fixed;top: 0;left: 0;mix-blend-mode: difference;z-index: 1000;}
+  .cursor__ball circle {fill: #f7f8fa;}
+  
+  .text-items {
+    margin: -58px 0;
+    overflow: hidden;
+  }
+  
+  .text-row {
+    display: flex;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .text-item {
+    font-family: 'Panchang Bold';
+    font-size: 20vw;
+    flex: 0 0 33%;
+    padding: 58px 0;
+    text-transform: uppercase;
+  }
+  
+  .text-item.-stroke {
+    color: transparent;
+    text-shadow: none;
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
+  }
+  
 }
 
-@keyframes App-logo-spin {
+
+@keyframes glowAnimation {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Panchang Medium';
+  src: url(./Fonts/OTF/Panchang-Medium.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Panchang Semibold';
+  src: url(./Fonts/OTF/Panchang-Semibold.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Panchang Bold';
+  src: url(./Fonts/OTF/Panchang-Bold.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins Semibold';
+  src: url(./Poppins/Poppins-SemiBold.ttf) format('truetype');
+}
+
+
+
+
