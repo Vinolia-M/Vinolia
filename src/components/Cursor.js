@@ -22,19 +22,19 @@ function Cursor() {
         // Hover an element
         function onMouseHover() {
           TweenMax.to($bigBall, .3, {
-            scale: 8 });
+            scale: 10 });
         
         }
         function onMouseHoverOut() {
           TweenMax.to($bigBall, .3, {
-            scale: 1 });
+            scale: 2 });
         
         }
       })
 
     return (
-      <div class="cursor">
-        <div class="cursor__ball cursor__ball--big">
+      <div className="cursor">
+        <div className="cursor__ball cursor__ball--big">
           <svg height="30" width="30">
             <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
           </svg>

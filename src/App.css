@@ -4,290 +4,293 @@
 
 
 body {
-  background-color: #d3d3d3 !important;
-  font-family: 'Panchang Medium' !important;
+  position: relative;
+  height: 100vh;
+  background-color: #d3d3d3;
+  font-family: 'Poppins Semibold' !important;
   overflow-x: hidden;
+
+  .down-container {
+    position: fixed;
+    top: 21%;
+    right: 31%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  text {
+    fill: #6B705C;
+    font-family: 'Montserrat';  
+    font-weight: 900;
+    font-size: 82.5px;
+    letter-spacing: 2.5px;
+  }
+  
+  .circleText {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    overflow: visible;
+    animation: rotate 7s linear infinite;
+}
+
+  button.circle {
+    position: absolute;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 240px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    top: 38%;
+    left: -8%;
+    padding: 0 20px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1) !important;
+      transition: all 0.5s ease-in-out;
+    }
+}
+
+button.left, button.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 50px;
+
+  &:hover {
+    border: 1px solid #6B705C;
+    background-color: transparent;
+    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+  }
 }
 
   .App-header {
     position: relative;
     margin: 0 130px;
-    padding: 40px 10px;
-
-      .logo {
-       text-decoration: none;
-       color: #000;
-       display: inline-block;
-       white-space: pre-line;
-      }
-
-      a.logo:hover {
-        font-family: 'Panchang Bold';
-        transition: all 2s ease-in-out;
-      }
-
-      .app-navigation {
-        display: none;
-
-        a {
-          display: block;
-          font-size: 14px;
-          font-family: 'Panchang Medium';
-          text-decoration: none;
-          color: #000;
-
-        &:hover {
-          font-family: 'Panchang Bold';
-          color: rgb(255, 196, 0);
-          transition: all 0.7s ease-in-out;
-        }
-        }
-
-        .nav-contents {
-          padding-right: 50px;
-        }
-      }
+    padding: 30px 10px;
   }
-
-  .hamburger-menu {
+  
+  .logo {
+    font-family: 'Panchang Medium';
     cursor: pointer;
-}
-
-.hamburger {
+    text-decoration: none;
+    color: #6B705C;
+    line-height: 1;
+    font-style: italic;
+    letter-spacing: 2px;
+  }
+  
+  a.logo:hover {
+    font-weight: 600;
+  }
+  
+  .app-navigation {
+    background-color: #111;
+  }
+  
+  a.nav-contents {
+    font-family: 'Poppins Semibold';
+    position: relative;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  a.nav-contents:hover {
+    text-decoration: underline;
+    font-style: italic;
+    color: rgb(255, 196, 0);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .hamburger-menu {
+    width: 4%;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 24px;
     height: 24px;
-}
-
-.hamburger span {
-    width: 100%;
-    height: 2px;
-    background-color: black;
+  }
+  
+  .hamburger span {
+    display: block;
+    height: 1px;
+    background-color: #6B705C;
     transition: all 0.3s ease;
-}
-
-.hamburger.open span:nth-child(1) {
+  }
+  
+  .hamburger span:nth-child(1) {
+    width: 40px;
+  }
+  
+  .hamburger span:nth-child(2) {
+      width: 60px;
+  }
+  
+  .hamburger.open span:nth-child(1) {
     transform: rotate(45deg);
-    transform-origin: 5px 5px;
-}
-
-.hamburger.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
+    transform-origin: 6px -4px;
+    width: 35px;
+    background-color: #fff;
+  }
+  
+  .hamburger.open span:nth-child(2) {
     transform: rotate(-45deg);
-    transform-origin: 5px 5px;
-}
-
-
-  .body-contents {
-    width: 100%;
-    padding: 0 10px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 50px;
-
-    .name {
-      font-size: 18px;
-      @include absolute-top-left(50%, 50%);
-      @include translate(-50%, -50%);
-      letter-spacing: 0.5em;
-      span { display: inline-block;}
-    }
-
-    .mini-intro {
-      @include absolute-top-left(50%, 50%);
-      @include translate(-50%, -50%);
-      span { display: inline-block;}
-    }
-      
-      .intro {
-        font-family: 'Poppins Semibold';
-        font-size: 90px;
-        line-height: 1.1;
+    transform-origin: 7px 5px;
+    width: 35px;
+    background-color: #fff;
+  }
+  
+    .body-contents {
+      position: relative;
+      font-family: 'Poppins Semibold';
+      width: 100%;
+      padding: 0 10px;
+      padding-bottom: 50px;
+  
+      .name {
+        font-family: 'Panchang Medium';
+        font-size: 18px;
         @include absolute-top-left(50%, 50%);
         @include translate(-50%, -50%);
+        letter-spacing: 0.5em;
         span { display: inline-block;}
+      }
+        .intro {
+          position: relative;
+          font-size: 107px;
+          line-height: 1.1;
+          span { display: inline-block;}
+      }
+
+      .intro-text {
+  @include absolute-top-left(50%, 50%);
+  @include translate(-50%, -50%);
+  span { display: inline-block;}
+}
+  }
+  
+    .cursor {pointer-events: none;}
+    .cursor__ball {position: fixed;top: 0;left: 0;mix-blend-mode: difference;z-index: 1000;}
+    .cursor__ball circle {fill: #f7f8fa;}
+    
+    .text-items {
+      margin: -58px 0;
+      overflow: hidden;
     }
-
-  .button::after {
-    content: '';
+    
+    .text-row {
+      display: flex;
+      text-align: center;
+      white-space: nowrap;
+    }
+    
+    .text-item {
+      font-family: 'Panchang Bold';
+      font-size: 20vw;
+      flex: 0 0 33%;
+      padding: 58px 0;
+      text-transform: uppercase;
+    }
+    
+    .text-item.-stroke {
+      color: transparent;
+      text-shadow: none;
+      -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
+    }
+  
+  
+  
+  
+    /*Modes*/
+  .mode-container {
+    position: relative;
+    padding: 2px;
+    transition: background-color 0.5s ease;
+    overflow: hidden;
+    cursor: pointer;
+  
+    img:nth-child(1) {
+      cursor: pointer;
+    }
+  
+    img:nth-child(2) {
+      cursor: pointer;
+    }
+  }
+  
+  .mode-dark-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    left: 39.4%;
+    top: 26px;
+    z-index: 1;
+    width: 50px;
+    height: 27px;
+    aspect-ratio: 1/1;
+    border-radius: 9px;
+    border: 1px solid #6B705C;
+    transition: background-color 0.5s ease;
+  }
+  
+  .mode-container.light {
+    position: absolute;
     height: 100%;
-    border-radius: 24px;
-    border: 2px solid transparent;
-    box-shadow: 0 0 3px #000;
-    animation: glowAnimation 1s infinite alternate;
-  }
-
-  .cover {
-    overflow: hidden;
-    transform: rotate(-6deg);
-}
-
-  .background {
-    font-family: 'Panchang Bold';
-    font-size: 200px;
-    width: max-content;
-}
-}
-
-.bg-component {
-
-  .tech {
-    color: rgb(255, 196, 0);
-  }
-}
-
-.slider-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6rem;
-}
-
-.slider {
-  --slide-width: 17rem;
-  position: relative;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.slide {
-  --card-opacity: 0.3;
-  display: none;
-  width: var(--slide-width);
-  aspect-ratio: 4 / 5;
-  border-radius: 1rem;
-  border-top: 2px solid rgba(255, 255, 255, 0.5);
-  border-left: 2px solid rgba(255, 255, 255, 0.5);
-  opacity: 1;
-  backdrop-filter: blur(5px);
-  position: relative;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1rem;
-}
-
-.slide[data-type='active'] {
-  display: block;
-}
-
-.slide[data-type='before'] {
-  display: block;
-  position: absolute;
-  scale: 0.8;
-  left: 0;
-  transform: translatex(-7rem);
-  z-index: -1;
-}
-
-.slide[data-type='after'] {
-  display: block;
-  position: absolute;
-  scale: 0.8;
-  right: 0;
-  transform: translatex(7rem);
-  z-index: -1;
-}
-
-[data-btn] {
-  cursor: pointer;
-  color: white;
-  transition: scale 200ms ease;
-}
-
-[data-btn]:hover {
-  scale: 1.1;
-  color: rgb(255, 196, 0);
-}
-
-  .cursor {pointer-events: none;}
-  .cursor__ball {position: fixed;top: 0;left: 0;mix-blend-mode: difference;z-index: 1000;}
-  .cursor__ball circle {fill: #f7f8fa;}
-  
-  .text-items {
-    margin: -58px 0;
-    overflow: hidden;
+    width: 100%;
+    color: #000000;
   }
   
-  .text-row {
-    display: flex;
-    text-align: center;
-    white-space: nowrap;
+  .mode-container.dark {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    color: #d3d3d3;
+  }
+
+  .icons {
+    position: absolute;
+    transition: all 0.3s ease-in-out;
   }
   
-  .text-item {
-    font-family: 'Panchang Bold';
-    font-size: 20vw;
-    flex: 0 0 33%;
-    padding: 58px 0;
-    text-transform: uppercase;
-  }
   
-  .text-item.-stroke {
-    color: transparent;
-    text-shadow: none;
-    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-
-
-
-@keyframes glowAnimation {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
+  100% {
+    transform: rotate(360deg);
   }
 }
 
 /*Responsive*/
 
 @media screen and (max-width: 991px) {
-  .foot {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .intro {
-    font-size: 41px !important;
-    width: 100% !important;
-}
-.icons {
-  display: none;
-}
-.mini-intro {
-  width: 68% !important;
-  font-size: 22px !important;
-}
+
 }
 
 @media (min-width: 768px) {
-  .app-navigation {
-      position: static;
-      width: auto;
-      display: flex !important;
-  }
-  .app-navigation a {
-      display: inline-block;
-      padding: 0 15px;
-  }
-  .hamburger-menu {
-      display: none;
-  }
+
 
 }
 
@@ -310,11 +313,6 @@ body {
 @font-face {
   font-family: 'Panchang Semibold';
   src: url(./Fonts/OTF/Panchang-Semibold.otf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Panchang Bold';
-  src: url(./Fonts/OTF/Panchang-Bold.otf) format('truetype');
 }
 
 @font-face {
