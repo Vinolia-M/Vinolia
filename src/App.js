@@ -18,11 +18,11 @@ function App() {
   return (
     <ThemeProvider>
       <Modes />
-      {/* <CodeBlocks />
+      <CodeBlocks />
       <Cursor />
-      <DownButton /> */}
+      <DownButton />
       <Navigation onNavComplete={handleNavComplete} />
-      {/* <Body animate={bodyAnimationStart} /> */}
+      <Body animate={bodyAnimationStart} />
     </ThemeProvider>
   );
 }
