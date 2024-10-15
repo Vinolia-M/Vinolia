@@ -27,12 +27,12 @@ const Modes = () => {
   return (
     <div className={`mode-container ${isLightMode ? 'light' : 'dark'}`}>
       <div ref={containerRef} className="mode-dark-container"></div>
-      <div className="relative left-[39%] top-[19px] z-10 flex items-center justify-center gap-[38px] border border-[#6B705C] rounded-[10px] w-[120px]">
+      <div className="mode-wrapper">
         {/* Change icon colors based on mode */}
         <div onClick={() => toggleMode("light")}>
           <img src={sun} alt="sun" className={`${isLightMode ? 'text-black' : 'text-white'}`} />
         </div>
-        <div onClick={() => toggleMode("dark")}>
+        <div className="relative left-[-6px]" onClick={() => toggleMode("dark")}>
           <img src={moon} alt="moon" className={`${!isLightMode ? 'text-white' : 'text-black'}`} />
         </div>
       </div>

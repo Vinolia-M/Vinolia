@@ -36,9 +36,9 @@ function Navigation({ isLightMode }) {
   
     return (
       <header className={`App-header flex justify-between items-center ${isLightMode ? 'text-black' : 'text-white'}`}>
-        <a href className="logo">
+        <div className="logo">
           <span>WEBSITE<br />DEVELOPER</span>
-        </a>
+        </div>
         <div className="hamburger-menu" onClick={toggleMenu}>
           <div className={`hamburger ${isMenuOpen ? 'open' : ''} ${!isLightMode ? 'text-white' : 'text-black'}`}>
             <span></span>
@@ -46,8 +46,7 @@ function Navigation({ isLightMode }) {
           </div>
         </div>
   
-        <div
-          ref={navRef}
+        <div ref={navRef}
           className="app-navigation z-10 hoverable fixed top-0 right-0 w-full h-full flex flex-col items-center justify-center"
           style={{ display: 'none' }}>
           <a href="about.html" className={`nav-contents ${!isLightMode ? 'text-white' : 'text-black'}`}>About me</a>

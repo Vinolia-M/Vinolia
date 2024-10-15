@@ -3,276 +3,296 @@
 @tailwind utilities;
 
 
-body {
-  position: relative;
-  height: 100vh;
+html body, #root {
+  position: absolute;
   background-color: #d3d3d3;
-  font-family: 'Poppins Semibold' !important;
-  overflow-x: hidden;
-
-  .down-container {
-    position: fixed;
-    top: 21%;
-    right: 31%;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  text {
-    fill: #6B705C;
-    font-family: 'Montserrat';  
-    font-weight: 900;
-    font-size: 82.5px;
-    letter-spacing: 2.5px;
-  }
-  
-  .circleText {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    overflow: visible;
-    animation: rotate 7s linear infinite;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
-  button.circle {
-    position: absolute;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    aspect-ratio: 1/1;
-    width: 240px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    top: 38%;
-    left: -8%;
-    padding: 0 20px;
-    cursor: pointer;
+.mode-container {
+  position: relative;
+  padding: 2px;
+  transition: background-color 0.5s ease;
+  overflow: hidden;
+  cursor: pointer;
 
-    &:hover {
-      transform: scale(1.1) !important;
-      transition: all 0.5s ease-in-out;
-    }
-}
-
-button.left, button.right {
+.mode-wrapper {
+  position: absolute;
+  left: 39%;
+  top: 28px;
+  z-index: 10;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 38px;
+  border: 1px solid #6B705C;
+  border-radius: 10px;
+  width: 120px;
+  min-height: 37px;
+}
+  
+img:nth-child(1) {
+  cursor: pointer;
+}
+  
+img:nth-child(2) {
+  cursor: pointer;
+}
+
+.mode-dark-container {
+  position: relative;
+  left: 39.3%;
+  top: 31px;
+  z-index: 1;
+  width: 50px;
+  height: 27px;
+  aspect-ratio: 1/1;
+  border-radius: 9px;
+  border: 1px solid #6B705C;
+  transition: background-color 0.5s ease;
+}
+}
+  
+.mode-container.light {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: #000000;
+}
+  
+.mode-container.dark {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  color: #d3d3d3;
+}
+  
+.icons {
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.App-header {
+  position: relative;
+  margin: 0 130px;
+  padding: 30px 10px;
+
+.logo {
+  font-family: 'Panchang Medium';
+  cursor: pointer;
+  color: #6B705C;
+  line-height: 1;
+  font-style: italic;
+  letter-spacing: 2px;
+  
+&:hover {
+  font-weight: 600;
+}
+}
+
+.hamburger-menu {
+  width: 4%;
+  cursor: pointer;
+  z-index: 1000;
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 24px;
+ 
+& span {
+  display: block;
+  height: 1px;
+  background-color: #6B705C;
+  transition: all 0.3s ease;
+}
+
+& span:nth-child(1) {
+  width: 40px;
+}
+  
+& span:nth-child(2) {
+  width: 60px;
+}
+
+&.open span:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: 6px -4px;
+  width: 35px;
+  background-color: #fff;
+}
+  
+&.open span:nth-child(2) {
+  transform: rotate(-45deg);
+  transform-origin: 7px 5px;
+  width: 35px;
+  background-color: #fff;
+}
+}
+}
+}
+
+
+
+
+
+
+.down-container {
+  position: fixed;
+  top: 21%;
+  right: 31%;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+text {
+  fill: #6B705C;
+  font-family: 'Montserrat';  
+  font-weight: 900;
+  font-size: 82.5px;
+  letter-spacing: 2.5px;
+}
+
+.circleText {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  overflow: visible;
+  animation: rotate 7s linear infinite;
+}
+
+button.circle {
+  position: absolute;
   border: 2px solid #fff;
   border-radius: 50%;
   aspect-ratio: 1/1;
-  width: 50px;
+  width: 240px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  top: 38%;
+  left: -8%;
+  padding: 0 20px;
+  cursor: pointer;
 
   &:hover {
-    border: 1px solid #6B705C;
-    background-color: transparent;
-    transform: scale(1.2);
+    transform: scale(1.1) !important;
     transition: all 0.5s ease-in-out;
   }
 }
 
-  .App-header {
+button.left, button.right {
+display: flex;
+justify-content: center;
+align-items: center;
+border: 2px solid #fff;
+border-radius: 50%;
+aspect-ratio: 1/1;
+width: 50px;
+
+&:hover {
+  border: 1px solid #6B705C;
+  background-color: transparent;
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+}
+}
+
+.app-navigation {
+  background-color: #111;
+}
+
+a.nav-contents {
+  font-family: 'Poppins Semibold';
+  position: relative;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  text-decoration: none;
+  color: #fff;
+}
+
+a.nav-contents:hover {
+  text-decoration: underline;
+  font-style: italic;
+  color: rgb(255, 196, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+
+  .body-contents {
     position: relative;
-    margin: 0 130px;
-    padding: 30px 10px;
-  }
-  
-  .logo {
-    font-family: 'Panchang Medium';
-    cursor: pointer;
-    text-decoration: none;
-    color: #6B705C;
-    line-height: 1;
-    font-style: italic;
-    letter-spacing: 2px;
-  }
-  
-  a.logo:hover {
-    font-weight: 600;
-  }
-  
-  .app-navigation {
-    background-color: #111;
-  }
-  
-  a.nav-contents {
     font-family: 'Poppins Semibold';
-    position: relative;
-    top: 40%;
-    display: flex;
-    justify-content: center;
-    font-size: 60px;
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  a.nav-contents:hover {
-    text-decoration: underline;
-    font-style: italic;
-    color: rgb(255, 196, 0);
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .hamburger-menu {
-    width: 4%;
-    cursor: pointer;
-    z-index: 1000;
-  }
-  
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 24px;
-    height: 24px;
-  }
-  
-  .hamburger span {
-    display: block;
-    height: 1px;
-    background-color: #6B705C;
-    transition: all 0.3s ease;
-  }
-  
-  .hamburger span:nth-child(1) {
-    width: 40px;
-  }
-  
-  .hamburger span:nth-child(2) {
-      width: 60px;
-  }
-  
-  .hamburger.open span:nth-child(1) {
-    transform: rotate(45deg);
-    transform-origin: 6px -4px;
-    width: 35px;
-    background-color: #fff;
-  }
-  
-  .hamburger.open span:nth-child(2) {
-    transform: rotate(-45deg);
-    transform-origin: 7px 5px;
-    width: 35px;
-    background-color: #fff;
-  }
-  
-    .body-contents {
-      position: relative;
-      font-family: 'Poppins Semibold';
-      width: 100%;
-      padding: 0 10px;
-      padding-bottom: 50px;
-  
-      .name {
-        font-family: 'Panchang Medium';
-        font-size: 18px;
-        @include absolute-top-left(50%, 50%);
-        @include translate(-50%, -50%);
-        letter-spacing: 0.5em;
+    width: 100%;
+    padding: 0 10px;
+    padding-bottom: 50px;
+
+    .name {
+      font-family: 'Panchang Medium';
+      font-size: 18px;
+      @include absolute-top-left(50%, 50%);
+      @include translate(-50%, -50%);
+      letter-spacing: 0.5em;
+      span { display: inline-block;}
+    }
+      .intro {
+        position: relative;
+        font-size: 107px;
+        line-height: 1.1;
         span { display: inline-block;}
-      }
-        .intro {
-          position: relative;
-          font-size: 107px;
-          line-height: 1.1;
-          span { display: inline-block;}
-      }
+    }
 
-      .intro-text {
-  @include absolute-top-left(50%, 50%);
-  @include translate(-50%, -50%);
-  span { display: inline-block;}
+    .intro-text {
+@include absolute-top-left(50%, 50%);
+@include translate(-50%, -50%);
+span { display: inline-block;}
 }
-  }
+}
+
+  .cursor {pointer-events: none;}
+  .cursor__ball {position: fixed;top: 0;left: 0;mix-blend-mode: difference;z-index: 1000;}
+  .cursor__ball circle {fill: #f7f8fa;}
   
-    .cursor {pointer-events: none;}
-    .cursor__ball {position: fixed;top: 0;left: 0;mix-blend-mode: difference;z-index: 1000;}
-    .cursor__ball circle {fill: #f7f8fa;}
-    
-    .text-items {
-      margin: -58px 0;
-      overflow: hidden;
-    }
-    
-    .text-row {
-      display: flex;
-      text-align: center;
-      white-space: nowrap;
-    }
-    
-    .text-item {
-      font-family: 'Panchang Bold';
-      font-size: 20vw;
-      flex: 0 0 33%;
-      padding: 58px 0;
-      text-transform: uppercase;
-    }
-    
-    .text-item.-stroke {
-      color: transparent;
-      text-shadow: none;
-      -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
-    }
-  
-  
-  
-  
-    /*Modes*/
-  .mode-container {
-    position: relative;
-    padding: 2px;
-    transition: background-color 0.5s ease;
+  .text-items {
+    margin: -58px 0;
     overflow: hidden;
-    cursor: pointer;
-  
-    img:nth-child(1) {
-      cursor: pointer;
-    }
-  
-    img:nth-child(2) {
-      cursor: pointer;
-    }
   }
   
-  .mode-dark-container {
-    position: absolute;
-    left: 39.4%;
-    top: 26px;
-    z-index: 1;
-    width: 50px;
-    height: 27px;
-    aspect-ratio: 1/1;
-    border-radius: 9px;
-    border: 1px solid #6B705C;
-    transition: background-color 0.5s ease;
+  .text-row {
+    display: flex;
+    text-align: center;
+    white-space: nowrap;
   }
   
-  .mode-container.light {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    color: #000000;
+  .text-item {
+    font-family: 'Panchang Bold';
+    font-size: 20vw;
+    flex: 0 0 33%;
+    padding: 58px 0;
+    text-transform: uppercase;
   }
   
-  .mode-container.dark {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #000000;
-    color: #d3d3d3;
+  .text-item.-stroke {
+    color: transparent;
+    text-shadow: none;
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
   }
 
-  .icons {
-    position: absolute;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  
-}
+
+
+
+
 
 @keyframes rotate {
   0% {
@@ -283,26 +303,30 @@ button.left, button.right {
   }
 }
 
-/*Responsive*/
+/*________________________Mobile_________________________*/
 
 @media screen and (max-width: 991px) {
-
+  .App-header {
+    margin: 0 20px;
+    .hamburger-menu {width: 16%;}
+  }
+  .logo {font-size: 14px;}
 }
 
-@media (min-width: 768px) {
-
-
+@media screen and (max-width: 768px) {
+  .mode-container {
+    .mode-wrapper {max-width: 90px;top: 26px;min-height: 0;gap: 20px;}
+  .mode-dark-container {width: 43px;height: 28px;top: 28px;left: 39.5%;}
+  }
 }
 
-
-
-
-
-
-
-
-
-
+@media screen and (max-width: 588px) {
+  .App-header {margin: 0;}
+  .mode-container {
+    .mode-wrapper {left: 50%;top: 24px;}
+  .mode-dark-container {left: 51%;top: 26px;}
+  }
+}
 
 
 @font-face {
