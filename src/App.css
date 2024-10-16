@@ -4,6 +4,7 @@
 
 
 html body, #root {
+  font-family: 'Panchang Medium';
   position: absolute;
   background-color: #d3d3d3;
   padding: 0;
@@ -82,7 +83,6 @@ img:nth-child(2) {
   padding: 30px 10px;
 
 .logo {
-  font-family: 'Panchang Medium';
   cursor: pointer;
   color: #6B705C;
   line-height: 1;
@@ -310,28 +310,29 @@ span { display: inline-block;}
     margin: 0 20px;
     .hamburger-menu {width: 16%;}
   }
-  .logo {font-size: 14px;}
+  .logo {letter-spacing: 0 !important;}
 }
 
 @media screen and (max-width: 768px) {
   .mode-container {
-    .mode-wrapper {max-width: 90px;top: 26px;min-height: 0;gap: 20px;}
+    .mode-wrapper {max-width: 112px;top: 26px;min-height: 0;gap: 41px;}
   .mode-dark-container {width: 43px;height: 28px;top: 28px;left: 39.5%;}
   }
 }
 
 @media screen and (max-width: 588px) {
   .App-header {margin: 0;}
+  .logo {font-size: 13px;}
   .mode-container {
-    .mode-wrapper {left: 50%;top: 24px;}
-  .mode-dark-container {left: 51%;top: 26px;}
+    .mode-wrapper {left: 44%;top: 24px;}
+  .mode-dark-container {left: 45%;top: 26px;}
   }
 }
 
 
 @font-face {
   font-family: 'Panchang Medium';
-  src: url(./Fonts/OTF/Panchang-Medium.otf) format('truetype');
+  src: url(./Fonts/WEB/fonts/Panchang-Medium.woff) format('woff');
 }
 
 @font-face {
