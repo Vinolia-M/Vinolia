@@ -22,7 +22,7 @@ function App() {
       <Body animate={bodyAnimationStart} />
       <CodeBlocks />
       <Cursor />
-      <DownButton />
+      {/* <DownButton /> */}
     </ThemeProvider>
   );
 }

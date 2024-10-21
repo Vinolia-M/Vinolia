@@ -97,15 +97,15 @@ function Body() {
     return (
         <>
         <div className='body-contents'>
-            <div className='text-center mt-[110px]'>
+            <div className='text-center mt-[200px]'>
                 <div className='name'>Vinolia Masango</div>
-                <div className='intro hoverable mt-3 mx-auto w-[47%]'>
+                <div className='flex justify-center'>
+                <div className='intro hoverable mt-3'>
                     {bodyText}
                 </div>
-                <div className='intro-effect overflow-hidden text-[20px] w-[29%] mx-auto mt-[20px]'>
-                    <span className='intro-text'>
-                        {introText}
-                    </span>
+                </div>
+                <div className='intro-effect overflow-hidden text-[20px] w-[29%] mt-[20px]'>
+                    <span className='intro-text'>{introText}</span>
                 </div>
             </div>
             <div className='absolute right-[8%] top-[40%]'>

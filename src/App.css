@@ -5,12 +5,9 @@
 
 html body, #root {
   font-family: 'Panchang Medium';
-  position: absolute;
   background-color: #d3d3d3;
   padding: 0;
   overflow: hidden;
-  height: 100%;
-  width: 100%;
 }
 
 .mode-container {
@@ -78,7 +75,8 @@ img:nth-child(2) {
 }
 
 .App-header {
-  position: relative;
+  position: absolute;
+  width: 87%;
   margin: 0 130px;
   padding: 30px 10px;
 
@@ -137,7 +135,6 @@ img:nth-child(2) {
 }
 }
 }
-
 
 
 
@@ -232,11 +229,9 @@ a.nav-contents:hover {
 
 
   .body-contents {
-    position: relative;
+    position: absolute;
     font-family: 'Poppins Semibold';
     width: 100%;
-    padding: 0 10px;
-    padding-bottom: 50px;
 
     .name {
       font-family: 'Panchang Medium';
@@ -248,15 +243,19 @@ a.nav-contents:hover {
     }
       .intro {
         position: relative;
-        font-size: 107px;
+        font-size: 100px;
         line-height: 1.1;
+        padding: 0 19px;
+        width: 47%;
         span { display: inline-block;}
     }
 
     .intro-text {
 @include absolute-top-left(50%, 50%);
 @include translate(-50%, -50%);
-span { display: inline-block;}
+span {
+  display: inline-block;
+}
 }
 }
 
@@ -305,20 +304,36 @@ span { display: inline-block;}
 
 /*________________________Mobile_________________________*/
 
+@media screen and (max-width: 1720px) {.intro {width: 52% !important;}}
+@media screen and (max-width: 1589px) {.intro {width: 57% !important;}}
+@media screen and (max-width: 1452px) {.intro {font-size: 95px !important;width: 59% !important;}}
+@media screen and (max-width: 1337px) {.intro {width: 64% !important;}}
+@media screen and (max-width: 1235px) {.intro {width: 70% !important;}}
+@media screen and (max-width: 1130px) {.intro {font-size: 88px !important;width: 71% !important;}}
+@media screen and (max-width: 1038px) {.intro {width: 77% !important;}}
 @media screen and (max-width: 991px) {
-  .App-header {
-    margin: 0 20px;
-    .hamburger-menu {width: 16%;}
-  }
+  .App-header {margin: 0 20px;
+    .hamburger-menu {width: 16%;}}
   .logo {letter-spacing: 0 !important;}
-}
+  .icons {display: none;}
+  .intro {font-size: 70px !important;width: 65% !important;}
+  button.circle {display: none;}
+  .arrows-container {font-size: 16px;}}
 
+@media screen and (max-width: 917px) {.intro {width: 70% !important;}}
+@media screen and (max-width: 853px) {.intro {width: 76% !important;}}
+@media screen and (max-width: 787px) {.intro {width: 83% !important;}}
 @media screen and (max-width: 768px) {
   .mode-container {
     .mode-wrapper {max-width: 112px;top: 26px;min-height: 0;gap: 41px;}
   .mode-dark-container {width: 43px;height: 28px;top: 28px;left: 39.5%;}
   }
+  .intro {width: 85% !important;}
 }
+
+@media screen and (max-width: 706px) {.intro {font-size: 60px !important;width: 80% !important;}}
+@media screen and (max-width: 652px) {.intro {width: 87% !important;}}
+@media screen and (max-width: 601px) {.intro {width: 95% !important;}}
 
 @media screen and (max-width: 588px) {
   .App-header {margin: 0;}
@@ -327,7 +342,14 @@ span { display: inline-block;}
     .mode-wrapper {left: 44%;top: 24px;}
   .mode-dark-container {left: 45%;top: 26px;}
   }
-}
+  .intro {width: 96% !important;}}
+
+@media screen and (max-width: 546px) {.intro {width: 100% !important;}}
+@media screen and (max-width: 525px) {.intro {font-size: 50px !important;width: 92% !important;}}
+@media screen and (max-width: 485px) {.intro {font-size: 47px !important;width: 95% !important;}}
+@media screen and (max-width: 446px) {.intro {width: 100% !important;}}
+@media screen and (max-width: 424px) {.intro {font-size: 42px !important;width: 99% !important;}}
+@media screen and (max-width: 389px) {.name {width: 103%;}.intro {font-size: 38px !important;}}
 
 
 @font-face {

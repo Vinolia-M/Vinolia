@@ -56,7 +56,7 @@ const ChangingThemes = ({ setBodyText, setBodyBackgroundColor, setIntroText }) =
       <button className="circle" ref={circleButtonRef} onClick={handleNext}>
         <img src={shufflImage} alt="Shuffle" />
       </button>
-      <div className="overflow-hidden absolute bottom-[10%] left-[40%] text-center p-2">
+      <div className="overflow-hidden absolute bottom-[10%] w-full text-center p-2">
       <div className="shuffle-container" ref={shuffleContainerRef}>
         <div className="count">{currentIndex + 1}/{themes.length}</div>
         <div className="arrows-container flex justify-center items-center gap-[80px] text-[20px] font-semibold">
